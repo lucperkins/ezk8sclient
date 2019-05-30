@@ -1,4 +1,4 @@
-module github.com/lucperkins/kubectl-notes
+module github.com/lucperkins/ezk8sclient
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
