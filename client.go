@@ -5,11 +5,7 @@ import (
 	"k8s.io/client-go/kubernetes"
 )
 
-type Client struct {
-	k8s *kubernetes.Clientset
-}
-
-func NewClient() (*Client, error) {
+func NewClient() (*kubernetes.Clientset, error) {
 	flags := genericclioptions.NewConfigFlags()
 	restConfig, err := flags.ToRESTConfig()
 	if err != nil {
@@ -20,7 +16,6 @@ func NewClient() (*Client, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &Client{
-		k8s: k8s,
-	}, nil
+
+	return k8s, nil
 }
